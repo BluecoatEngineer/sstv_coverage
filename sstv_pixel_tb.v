@@ -116,7 +116,7 @@ task sstv_pixel_decode;
             $display ("[%s] Checking color decode for freq = %04d Hz", TESTNAME, driven_freq);
             freq = driven_freq;
             @(posedge clk);
-            assign color_check = sstv_pixel_colormap(freq);
+            color_check = sstv_pixel_colormap(freq);
             if (color != color_check) begin
                 $display("freq: %d Color: %d should be: %d", freq, color, color_check);
                 test_fail = 1'b1;
